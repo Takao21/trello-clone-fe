@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+:root {
+  --transcolor1: rgba(155, 155, 155, 0.2);
+  --transcolor2: rgba(223, 223, 223, 0.3);
+  --transcolor2d: rgba(223, 223, 223, 0.6);
+}
+
 html {
   font-size: 100%;
   font-family: sans-serif;
@@ -13,19 +20,34 @@ a {
   color: white;
 }
 
+i:hover {
+  cursor: pointer;
+}
+
 .navbar {
-  background-color: rgba(200, 200, 200, 0.3);
+  background-color: var(--transcolor1);
 }
 
 .trans-buttons {
-  height: 2.5em;
+  height: 2em;
+}
+
+.fa-search, .fa-share, .fa-times, .navbar, .secondarynav {
+  line-height: 2em;
 }
 
 .trans-buttons a {
   display: inline-block;
-  border: 1px solid white;
+  border: 1px solid transparent;
   border-radius: 0.25em;
-  margin: 0 0.5em;
+  margin: 0 0.15em;
+  line-height: 100%;
+  background-color: var(--transcolor2);
+  font-weight: bold;
+}
+
+.trans-buttons a:hover {
+  color: #222;
 }
 
 .trans-buttons a, .trans-buttons input {
@@ -42,13 +64,22 @@ a {
   border-radius: 0.25em 0 0 0.25em;
   width: 10em;
   transition: width 0.3s;
+  margin-left: 0.15em;
+  background-color: var(--transcolor2);
+}
+
+.trans-buttons input:focus {
+  background-color: white;
+}
+
+#searchField {
+  z-index: 50;
 }
 
 .fa-search {
-  background-color: white;
+  background-color: var(--transcolor2);
   display: inline-block;
   height: 100%;
-  line-height: 2.5em;
   width: 1.8em;
   border: 1px solid grey;
   border-left: none;
@@ -59,7 +90,6 @@ a {
   background-color: white;
   display: inline-block;
   height: 100%;
-  line-height: 2.5em;
   width: 1.8em;
   border: 1px solid grey;
   border-left: none;
@@ -102,8 +132,26 @@ a {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  font-family: 'Yellowtail', cursive;
+  font-size: 2em;
+  color: var(--transcolor2);
 }
 
-i:hover {
-  cursor: pointer;
+.logo:hover{
+  color: var(--transcolor2d);
+}
+
+.secondarynav {
+  background-color: transparent;
+  color: #ddd;
+}
+
+#boardName {
+  font-weight: bold;
+  text-shadow: 1px 1px grey;
+  color: #ddd;
+}
+
+span {
+  cursor: default;
 }
