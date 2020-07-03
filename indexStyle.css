@@ -1,0 +1,109 @@
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background-image: url(https://wallpaperboat.com/wp-content/uploads/2020/04/minimalist-aesthetic-wallpaper-12.jpg);
+  background-position: top center;
+}
+
+a {
+  color: white;
+}
+
+.navbar {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.trans-buttons {
+  height: 2.5em;
+}
+
+.trans-buttons a {
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 0.25em;
+  margin: 0 0.5em;
+}
+
+.trans-buttons a, .trans-buttons input {
+  height: 100%;
+}
+
+.trans-buttons input, .trans-buttons input:focus {
+  outline: 0;
+  border: 1px solid grey;
+  border-right: none;
+}
+
+.trans-buttons input {
+  border-radius: 0.25em 0 0 0.25em;
+  width: 10em;
+  transition: width 0.3s;
+}
+
+.fa-search {
+  background-color: white;
+  display: inline-block;
+  height: 100%;
+  line-height: 2.5em;
+  width: 1.8em;
+  border: 1px solid grey;
+  border-left: none;
+  border-radius: 0 0.25em 0.25em 0;
+}
+
+.fa-share, .fa-times {
+  background-color: white;
+  display: inline-block;
+  height: 100%;
+  line-height: 2.5em;
+  width: 1.8em;
+  border: 1px solid grey;
+  border-left: none;
+}
+
+.fa-times {
+  border-radius: 0 0.25em 0.25em 0;
+}
+
+.fa-share {
+  border-right: none;
+}
+
+.showOnFocus {
+  display: none;
+}
+
+.showOnInit {
+  display: inline-block;
+}
+
+.trans-buttons input:focus {
+  width: 20em;
+  transition: width 0.3s;
+}
+
+.trans-buttons input:focus ~ .showOnInit {
+  display: none;
+}
+
+.trans-buttons input:focus ~ .showOnFocus {
+  display: inline-block;
+}
+
+.trans-buttons a:hover {
+  background-color: #ddd;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+i:hover {
+  cursor: pointer;
+}
