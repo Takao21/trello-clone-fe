@@ -1,0 +1,44 @@
+.list-wrapper {
+  overflow-x: auto;
+}
+
+.card-list, .trello-card {
+  border-radius: 0.25em;
+}
+
+.card-list {
+  width: 18vw;
+}
+
+.trello-card {
+  background-color: #555;
+  position: relative;
+}
+
+.trello-card:hover {
+  background-color: #ddd;
+  color: #222;
+}
+
+.trello-card-label {
+  display: block;
+  width: 2.5vw;
+  height: 0.5em;
+  background-color: green;
+  border-radius: 0.5em;
+  border: 0.07em outset #ddd;
+}
+
+.overlay-edit-button {
+  position: absolute;
+  right: 1em;
+  display: none;
+}
+
+.trello-card:hover .overlay-edit-button {
+  display: inline-block;
+}
+
+.overlay-edit-button:hover {
+  transform: scale(1.3);
+}

@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <link rel="stylesheet" href="./indexStyle.css">
+  <link rel="stylesheet" href="./cardStyles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+  <!-- first nav -->
   <nav class="navbar navbar-expand">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -59,6 +61,7 @@
       </li>
     </ul>
   </nav>
+  <!-- second nav -->
   <nav class="navbar navbar-expand secondarynav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
@@ -81,9 +84,9 @@
       </li>
       <span class="ml-1 mr-1">|</span>
       <li>
-      <div class="trans-buttons">
-        <!-- account avatars here -->
-      </div>
+        <div class="trans-buttons">
+          <!-- account avatars here -->
+        </div>
       </li>
       <li class="nav-item ml-1">
         <div class="trans-buttons">
@@ -104,8 +107,29 @@
       </li>
     </ul>
   </nav>
-  <div class="list-wrapper">
+  <!-- display area -->
+  <div class="list-wrapper text-light d-flex flex-row">
+    <div class="card-list bg-dark border border-white pl-2 pr-2 py-2">
+      <div class="list-head d-flex justify-content-between">
+        <h5 class="">List Title</h5>
+        <span class="more-options-button">&bull;&bull;&bull;</span>
+      </div>
+      <div class="list-body">
+        <div class="trello-card p-2 pb-3">
+          <span class="overlay-edit-button"><i class="fa fa-pencil"></i></span>
+          <span class="trello-card-label my-1 mr-2"></span>
+          <p>Card Title</p>
+          <div class="card-buttons d-flex flex-row">
+            <span class="mr-4"><i class="fas fa-align-justify"></i></span>
+            <span class="mr-4"><i class="fas fa-paperclip"></i> 1</span>
+            <span class="mr-4"><i class="fab fa-github"></i> 1</span>
+          </div>
+        </div>
+      </div>
+      <div class="list-tail">
 
+      </div>
+    </div>
   </div>
 </body>
 
