@@ -1,4 +1,5 @@
 .list-wrapper {
+  width: 100%;
   overflow-x: auto;
 }
 
@@ -7,7 +8,7 @@
 }
 
 .card-list {
-  width: 18vw;
+  min-width: 17em;
 }
 
 .trello-card {
@@ -18,11 +19,12 @@
 .trello-card:hover {
   background-color: #ddd;
   color: #222;
+  cursor: pointer;
 }
 
 .trello-card-label {
   display: block;
-  width: 2.5vw;
+  width: 2.5em;
   height: 0.5em;
   background-color: green;
   border-radius: 0.5em;
@@ -41,4 +43,58 @@
 
 .overlay-edit-button:hover {
   transform: scale(1.3);
+}
+
+.list-head {
+  position: relative;
+}
+
+.more-options-button {
+  position: absolute;
+  right: 0;
+  user-select: none;
+  width: 2em;
+  text-align: center;
+  border-radius: 0.25em;
+}
+
+.more-options-button:hover {
+  background-color: #ddd;
+  color: #333;
+  cursor: pointer;
+}
+
+.more-options-button:active {
+  background-color: #aaa;
+}
+
+.listmenu-modal {
+  background-color: #d7d7d7;
+  color: black;
+  position: absolute;
+  display: block;
+  width: 150px;
+  font-size: 0.8em;
+  border-radius: 0.25em;
+  box-shadow: 2px 2px 4px 1px black;
+  overflow: hidden;
+}
+
+.modal-btn {
+  padding: 0.3em 0;
+  margin: 0;
+}
+
+#archive-btn {
+  background-color: #dd1212;
+  color: #eee;
+}
+
+.modal-btn:hover {
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+#archive-btn:hover {
+  filter: grayscale(20%);
 }

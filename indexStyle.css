@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background-image: url(https://wallpaperboat.com/wp-content/uploads/2020/04/minimalist-aesthetic-wallpaper-12.jpg);
   background-position: top center;
 }
@@ -22,6 +22,14 @@ a {
 
 i:hover {
   cursor: pointer;
+}
+
+.navs-div {
+  height: 13vh;
+}
+
+.list-wrapper {
+  height: 87vh;
 }
 
 .navbar {

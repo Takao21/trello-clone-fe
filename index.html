@@ -13,124 +13,113 @@
 </head>
 
 <body>
-  <!-- first nav -->
-  <nav class="navbar navbar-expand">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" href="#"><i class='fas fa-th'></i></a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" href="#"><i class='fas fa-home'></i></a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" href="#"><i class='fab fa-trello'></i> Boards</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="trans-buttons" id="searchField">
-          <input type="text" name="search" value=""><i class='fas fa-search showOnInit'></i><i class='fas fa-share showOnFocus'></i><i class='fas fa-times showOnFocus'></i>
-        </div>
-      </li>
-    </ul>
-    <a class="nav-link logo" href="#"><i class='fab fa-trello'></i>Trello</a>
-    <ul class="navbar-nav d-flex align-items-end">
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" href="#"><i class='fas fa-plus'></i></a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" href="#"><i class='fas fa-info-circle'></i></a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" href="#"><i class='fas fa-bell'></i></a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a href="#" style="border: none; display: block;"><img src="https://www.w3schools.com/howto/img_avatar.png" style="height: 100%; border-radius: 50%;" alt="avatar"></a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <!-- second nav -->
-  <nav class="navbar navbar-expand secondarynav">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <span id="boardName">Trello Clone</span>
-          <a class="nav-link" href="#"><i class='far fa-star'></i></a>
-        </div>
-      </li>
-      <span class="ml-1 mr-1">|</span>
-      <li class="nav-item ml-1 mr-1">
-        <div class="trans-buttons">
-          <span>Private Team</span>
-        </div>
-      </li>
-      <span class="ml-1 mr-1">|</span>
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" style="font-weight: normal;" href="#"> <i class='fa fa-group'></i> Team Visible</a>
-        </div>
-      </li>
-      <span class="ml-1 mr-1">|</span>
-      <li>
-        <div class="trans-buttons">
-          <!-- account avatars here -->
-        </div>
-      </li>
-      <li class="nav-item ml-1">
-        <div class="trans-buttons">
-          <a class="nav-link" style="font-weight: normal;" href="#">Invite</a>
-        </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav d-flex align-items-end">
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" style="font-weight: normal;" href="#"><i class='fas fa-concierge-bell'></i> Butler (1 Tip) </a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <div class="trans-buttons">
-          <a class="nav-link" style="font-weight: normal;" href="#">&bull;&bull;&bull; Show Menu</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-  <!-- display area -->
-  <div class="list-wrapper text-light d-flex flex-row">
-    <div class="card-list bg-dark border border-white pl-2 pr-2 py-2">
-      <div class="list-head d-flex justify-content-between">
-        <h5 class="">List Title</h5>
-        <span class="more-options-button">&bull;&bull;&bull;</span>
-      </div>
-      <div class="list-body">
-        <div class="trello-card p-2 pb-3">
-          <span class="overlay-edit-button"><i class="fa fa-pencil"></i></span>
-          <span class="trello-card-label my-1 mr-2"></span>
-          <p>Card Title</p>
-          <div class="card-buttons d-flex flex-row">
-            <span class="mr-4"><i class="fas fa-align-justify"></i></span>
-            <span class="mr-4"><i class="fas fa-paperclip"></i> 1</span>
-            <span class="mr-4"><i class="fab fa-github"></i> 1</span>
-          </div>
-        </div>
-      </div>
-      <div class="list-tail">
-
-      </div>
-    </div>
+  <div class="type-modal listmenu-modal d-flex flex-column align-items-stretch text-center" style="z-index: -999; opacity: 0;">
+    <p class="modal-btn">Add Card</p>
+    <p class="modal-btn">Copy List</p>
+    <p class="modal-btn">Move List</p>
+    <p  class="modal-btn" id="archive-btn">Archive</p>
   </div>
+  <div class="navs-div">
+    <!-- first nav -->
+    <nav class="navbar navbar-expand">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" href="#"><i class='fas fa-th'></i></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" href="#"><i class='fas fa-home'></i></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" href="#"><i class='fab fa-trello'></i> Boards</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="trans-buttons" id="searchField">
+            <input type="text" name="search" value=""><i class='fas fa-search showOnInit'></i><i class='fas fa-share showOnFocus'></i><i class='fas fa-times showOnFocus'></i>
+          </div>
+        </li>
+      </ul>
+      <a class="nav-link logo" href="#"><i class='fab fa-trello'></i>Trello</a>
+      <ul class="navbar-nav d-flex align-items-end">
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" href="#"><i class='fas fa-plus'></i></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" href="#"><i class='fas fa-info-circle'></i></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" href="#"><i class='fas fa-bell'></i></a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a href="#" style="border: none; display: block;"><img src="https://www.w3schools.com/howto/img_avatar.png" style="height: 100%; border-radius: 50%;" alt="avatar"></a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- second nav -->
+    <nav class="navbar navbar-expand secondarynav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <span id="boardName">Trello Clone</span>
+            <a class="nav-link" href="#"><i class='far fa-star'></i></a>
+          </div>
+        </li>
+        <span class="ml-1 mr-1">|</span>
+        <li class="nav-item ml-1 mr-1">
+          <div class="trans-buttons">
+            <span>Private Team</span>
+          </div>
+        </li>
+        <span class="ml-1 mr-1">|</span>
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" style="font-weight: normal;" href="#"> <i class='fa fa-group'></i> Team Visible</a>
+          </div>
+        </li>
+        <span class="ml-1 mr-1">|</span>
+        <li>
+          <div class="trans-buttons">
+            <!-- account avatars here -->
+          </div>
+        </li>
+        <li class="nav-item ml-1">
+          <div class="trans-buttons">
+            <a class="nav-link" style="font-weight: normal;" href="#">Invite</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav d-flex align-items-end">
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" style="font-weight: normal;" href="#"><i class='fas fa-concierge-bell'></i> Butler (1 Tip) </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div class="trans-buttons">
+            <a class="nav-link" style="font-weight: normal;" href="#"><span class="small">&bull;&bull;&bull;</span> Show Menu</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- display area -->
+  <div class="list-wrapper text-light d-flex flex-row px-2 pr-3">
+  <!-- data displays here -->
+  </div>
+  <script type="text/javascript" src="./app.js"></script>
 </body>
 
 </html>
