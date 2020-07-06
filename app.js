@@ -74,7 +74,7 @@ async function requestData() {
   }
 }
 
-function List() {
+function List() {  // CUSTOM OBJECT
   let listId, listTitle, listPosition, listStatus;
   const DISPLAY = document.getElementsByClassName("list-wrapper")[0];
   let cardChunks = '';
@@ -128,8 +128,9 @@ function List() {
 }
 
 const openListMenu = (el) => {
-  modalClick(event);
+  modalClick(event);  //  to prevent the trigger of window's modal hiding event
   let modal = document.getElementsByClassName("listmenu-modal")[0];
+  modal.id = el.parentNode.parentNode.id;
   let bodyRect = document.body.getBoundingClientRect(),
     btnRect = el.getBoundingClientRect(),
     offsetL = btnRect.left - bodyRect.left;
@@ -141,7 +142,6 @@ const openListMenu = (el) => {
     offsetT += 30;
     modal.style.top = offsetT + "px";
     modal.style.left = offsetL + "px";
-    console.log(modal.style.zIndex , modal.style.opacity);
     if (modal.style.zIndex === "-999" && modal.style.opacity === "0") {
       modal.style.zIndex = "999";
       modal.style.opacity = "1";
@@ -149,4 +149,25 @@ const openListMenu = (el) => {
       modal.style.zIndex = "-999";
       modal.style.opacity = "0";
     }
+}
+
+const archiveList = (el) => {
+  let confirm = window.confirm("The list will be archived. You can restore it later.");
+  confirm ? archiveRequest(el.parentNode.id) : console.log("Action cancelled.");
+}
+
+async function archiveRequest(id) {
+  try {
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    const response = await fetch(`${END_POINT}/list/${id}/status/2`, {
+      method: 'PUT',
+      headers: myHeaders,
+    })
+    .then(() => {
+      location.reload();
+    });
+  } catch (error) {
+    console.error(error);
+  }
 }

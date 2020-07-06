@@ -69,32 +69,45 @@
 }
 
 .listmenu-modal {
-  background-color: #d7d7d7;
   color: black;
   position: absolute;
   display: block;
   width: 150px;
   font-size: 0.8em;
   border-radius: 0.25em;
-  box-shadow: 2px 2px 4px 1px black;
-  overflow: hidden;
 }
 
 .modal-btn {
+  background-color: #d7d7d7;
+  border-radius: 0.25em;
+  border: 1px solid #222;
+  box-shadow: 2px 2px 2px 1px black;
+  display: inline-block;
   padding: 0.3em 0;
   margin: 0;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  transition: all 150ms ease-out;
+}
+
+.modal-btn:last-child {
+  border-bottom: none;
 }
 
 #archive-btn {
-  background-color: #dd1212;
+  background-color: #CC0000;
   color: #eee;
 }
 
 .modal-btn:hover {
-  background-color: #bbb;
+  filter: brightness(112%);
   cursor: pointer;
+  font-weight: bolder;
+  line-height: 2em;
+  z-index: 1000;
+  transition: all 150ms ease-out;
 }
 
 #archive-btn:hover {
-  filter: grayscale(20%);
+  filter: brightness(112%);
 }
