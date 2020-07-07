@@ -129,7 +129,7 @@ function List() { // CUSTOM OBJECT
     },
     // etc. etc.
   });
-}
+} 
 
 const openListMenu = (el) => {
   modalClick(event); //  to prevent the trigger of window's modal hiding event
