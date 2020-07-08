@@ -8,6 +8,7 @@ const END_POINT = 'https://trello-clone-ppm.herokuapp.com';
 
 const setup = () => { // ONLOAD EVENT LISTENERS
   document.getElementsByClassName('type-modal')[0].addEventListener('click', modalClick);
+  document.getElementsByClassName('cardmodal')[0].addEventListener('click', modalClick);
   document.body.addEventListener('click', closeModals);
   appendNewListBtn();
 }
@@ -39,7 +40,7 @@ const displayData = async () => {
       let cardChunks = '';
       cardList.forEach(card => {
         cardChunks += `
-              <div class="trello-card p-2 pb-3 mb-2">
+              <div class="trello-card p-2 pb-3 mb-2" onclick="openCard()">
                 <span class="overlay-edit-button"><i class="fa fa-pencil"></i></span>`;
 
         card.labels.forEach(label => {
@@ -249,6 +250,16 @@ const createNewList = () => {
   } else {
     alert("The field must not be empty.")
   }
+}
+
+const openCard = () => {
+  let card = document.getElementsByClassName("cardmodal-wrapper")[0];
+  card.style.display = "block";
+}
+
+const closeCard = () => {
+  let card = document.getElementsByClassName("cardmodal-wrapper")[0];
+  card.style.display = "none";
 }
 
 const isLoading = (_loading) => {
