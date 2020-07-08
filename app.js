@@ -1,5 +1,6 @@
 // GLOBAL
 window.onload = () => {
+  isLoading(false);
   displayData();
 }
 const END_POINT = 'https://trello-clone-ppm.herokuapp.com';
@@ -67,13 +68,16 @@ const displayData = async () => {
 
 async function requestData() {
   try {
+    isLoading(true);
     const response = await fetch(END_POINT + '/list', {
       method: 'GET',
       credentials: 'same-origin'
-    });
+    })
     const data = await response.json();
+    isLoading(false);
     return data;
   } catch (error) {
+    isLoading(false);
     console.error(error);
   }
 }
@@ -129,7 +133,7 @@ function List() { // CUSTOM OBJECT
     },
     // etc. etc.
   });
-} 
+}
 
 const openListMenu = (el) => {
   modalClick(event); //  to prevent the trigger of window's modal hiding event
@@ -162,6 +166,7 @@ const archiveList = (el) => {
 
 async function archiveRequest(id) {
   try {
+    isLoading(true);
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     const response = await fetch(`${END_POINT}/list/${id}/status/2`, {
@@ -169,15 +174,18 @@ async function archiveRequest(id) {
         headers: myHeaders,
       })
       .then(() => {
+        isLoading(false);
         location.reload();
       });
   } catch (error) {
+    isLoading(false);
     console.error(error);
   }
 }
 
 async function newListRequest(_title) {
   try {
+    isLoading(true);
     let newList = JSON.stringify({
       "title": _title,
       "position": 4,
@@ -191,9 +199,11 @@ async function newListRequest(_title) {
         body: newList
       })
       .then(() => {
+        isLoading(false);
         location.reload();
       });
   } catch (error) {
+    isLoading(false);
     console.error(error);
   }
 }
@@ -238,5 +248,18 @@ const createNewList = () => {
     newListRequest(title);
   } else {
     alert("The field must not be empty.")
+  }
+}
+
+const isLoading = (_loading) => {
+  let logo = document.getElementById("logo");
+  let loader = document.getElementById("loader");
+  if (_loading) {
+    logo.style.display = "none";
+    loader.style.display = "block";
+  }
+  else {
+    logo.style.display = "block";
+    loader.style.display = "none";
   }
 }
