@@ -4,7 +4,9 @@ window.onload = () => {
   displayData();
 }
 const END_POINT = 'https://trello-clone-ppm.herokuapp.com';
-let actionTargetList;
+if (typeof(actionTargetList) === 'undefined') {
+  let actionTargetList;
+}
 // ----------------------------------
 
 const setup = () => { // ONLOAD EVENT LISTENERS
