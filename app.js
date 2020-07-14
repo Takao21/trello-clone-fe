@@ -70,7 +70,7 @@ const displayData = async () => {
   setup();
 }
 
-async function requestData() {
+const requestData = async () => {
   try {
     isLoading(true);
     const response = await fetch(END_POINT + '/list', {
@@ -169,7 +169,7 @@ const archiveList = (el) => {
   confirm ? archiveRequest(el.parentNode.id) : console.log("Action cancelled.");
 }
 
-async function archiveRequest(id) {
+const archiveRequest = async (id) => {
   try {
     isLoading(true);
     let myHeaders = new Headers();
@@ -189,7 +189,7 @@ async function archiveRequest(id) {
   }
 }
 
-async function newListRequest(_title) {
+const newListRequest = async (_title) => {
   try {
     isLoading(true);
     let newList = JSON.stringify({
