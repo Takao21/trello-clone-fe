@@ -90,9 +90,13 @@ i:hover {
   z-index: 50;
 }
 
+.fa-search, .fa-share, .fa-times {
+  display: inline-block;
+  text-align: center;
+}
+
 .fa-search {
   background-color: var(--transcolor2);
-  display: inline-block;
   height: 100%;
   width: 1.8em;
   border: 1px solid grey;
@@ -101,8 +105,7 @@ i:hover {
 }
 
 .fa-share, .fa-times {
-  background-color: white;
-  display: inline-block;
+  background-color: #fff;
   height: 100%;
   width: 1.8em;
   border: 1px solid grey;
