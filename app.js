@@ -254,7 +254,7 @@ const createNewList = () => {
 
 const openCard = () => {  //  mocktesting
   let placeholders = ["https://i.kym-cdn.com/entries/icons/original/000/032/100/cover4.jpg", "https://cdn.shopify.com/s/files/1/0344/6469/files/melted12_4e189508-0c43-406c-a76a-d6f05053163f.jpg", "https://www.sunnyskyz.com/uploads/2018/12/65zli-cat-meme-1a.jpg", "https://i.imgur.com/ypQXU8y.jpg", "https://media1.tenor.com/images/1bb97c0f5564adf2f40f966bd8851f2e/tenor.gif"];
-  let url = Math.round(Math.random() * placeholders.length);
+  let url = Math.floor(Math.random() * placeholders.length);
   let card = document.getElementsByClassName("cardmodal-wrapper")[0];
   document.getElementsByClassName("cardmodal")[0].style.backgroundImage = `url(${placeholders[url]})`;
   card.style.display = "block";
