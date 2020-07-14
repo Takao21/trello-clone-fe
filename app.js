@@ -4,6 +4,7 @@ window.onload = () => {
   displayData();
 }
 const END_POINT = 'https://trello-clone-ppm.herokuapp.com';
+let actionTargetList;
 // ----------------------------------
 
 const setup = () => { // ONLOAD EVENT LISTENERS
@@ -138,6 +139,7 @@ function List() { // CUSTOM OBJECT
 
 const openListMenu = (el) => {
   modalClick(event); //  to prevent the trigger of window's modal hiding event
+  actionTargetList = el.parentNode.parentNode;
   let modal = document.getElementsByClassName("listmenu-modal")[0];
   modal.id = el.parentNode.parentNode.id;
   let bodyRect = document.body.getBoundingClientRect(),
@@ -176,7 +178,8 @@ async function archiveRequest(id) {
       })
       .then(() => {
         isLoading(false);
-        location.reload();
+        actionTargetList.remove();  //  global variable
+        closeModals();
       });
   } catch (error) {
     isLoading(false);
