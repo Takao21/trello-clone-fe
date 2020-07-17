@@ -220,10 +220,10 @@ const appendNewListBtn = () => {
   let wrapper = document.getElementsByClassName('list-wrapper')[0];
   wrapper.innerHTML += `
   <div class="align-self-start" style="border-right: 16px solid transparent; display: none;" id="newlist-field-wrapper" onclick="modalClick(event)">
-  <div class="card-list bg-light text-dark px-2 py-1" id="newlist-field">
+  <div class="card-list text-dark px-2 py-1" id="newlist-field">
       <input type="text" name="newList" id="newListInput" value="" style="margin: auto;">
       <div class="d-flex flex-row mt-2 ml-1 py-1">
-        <span class="newListAction list-tail-btn mr-2 text-light" onclick="createNewList()">Add List</span>
+        <span class="newListAction list-tail-btn mr-2" onclick="createNewList()">Add List</span>
         <span class="newListAction list-tail-btn" onclick="closeNewList(this)"><i class="fa fa-close"></i></span>
       </div>
   </div>

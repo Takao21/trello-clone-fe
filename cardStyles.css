@@ -199,9 +199,10 @@
 
 #newlist-field {
   margin-top: 0.5em;
-  box-shadow: .7px 0px 4px 1px grey,-0.7px 0px 4px 1px grey,0px .7px 4px 1px grey,0px -0.7px 4px 1px grey;
+  box-shadow: 2px 2px 3px 2px #121212;
   height: auto;
   overflow-y: auto;
+  background-color: #64696e;
 }
 
 #newlist-field input {
@@ -210,11 +211,22 @@
 }
 
 .newListAction:first-child {
-  background-color: #348a70;
+  background-color: #8f9cb0;
+  color: #eee;
 }
 
 .newListAction:first-child:hover {
-  background-color: #387d68;
+  background-color: #b6d9e3;
+  color: #222;
+}
+
+.newListAction:last-child {
+  color: #eee;
+}
+
+.newListAction:last-child:hover {
+  background-color: #eee;
+  color: #e64239;
 }
 
 .cardmodal-wrapper {
