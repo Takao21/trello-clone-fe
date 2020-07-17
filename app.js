@@ -4,6 +4,7 @@ window.onload = () => {
   displayData();
 }
 const END_POINT = 'https://trello-clone-ppm.herokuapp.com';
+let lists;
 if (typeof(actionTargetList) === 'undefined') {
   let actionTargetList;
 }
@@ -35,7 +36,7 @@ const closeModals = () => {
 
 // main
 const displayData = async () => {
-  let lists = await requestData();
+  lists = await requestData();
   lists.forEach(list => {
     if (list.status === 1) {
       let currentList = new List();
@@ -194,7 +195,7 @@ const newListRequest = async (_title) => {
     isLoading(true);
     let newList = JSON.stringify({
       "title": _title,
-      "position": 4,
+      "position": lists.length + 1,
       "status": 1
     });
     let myHeaders = new Headers();
