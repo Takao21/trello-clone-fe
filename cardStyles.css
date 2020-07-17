@@ -19,7 +19,7 @@
 
 .field-element {
   margin-top: 0.5em !important;
-  box-shadow: .7px 0px 4px 1px grey,-0.7px 0px 4px 1px grey,0px .7px 4px 1px grey,0px -0.7px 4px 1px grey;
+  box-shadow: 2px 2px 3px 2px #121212;
 }
 
 .list-head h5 {

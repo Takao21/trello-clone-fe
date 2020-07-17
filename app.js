@@ -46,6 +46,7 @@ const displayData = async () => {
         cardChunks += `
               <div class="trello-card p-2 pb-3 mb-2" onclick="openCard()">
                 <span class="overlay-edit-button"><i class="fa fa-pencil"></i></span>`;
+                console.log(card.labels);
 
         card.labels.forEach(label => {
           cardChunks += `<span class="trello-card-label my-1 mr-2" style="display: inline-block; background-color: ${label.color}"></span>`;
@@ -181,7 +182,7 @@ const archiveRequest = async (id) => {
       })
       .then(() => {
         isLoading(false);
-        actionTargetList.remove();  //  global variable
+        actionTargetList.remove(); //  global variable
         closeModals();
       });
   } catch (error) {
@@ -258,7 +259,7 @@ const createNewList = () => {
   }
 }
 
-const openCard = () => {  //  mocktesting
+const openCard = () => { //  mocktesting
   let placeholders = ["https://i.kym-cdn.com/entries/icons/original/000/032/100/cover4.jpg", "https://cdn.shopify.com/s/files/1/0344/6469/files/melted12_4e189508-0c43-406c-a76a-d6f05053163f.jpg", "https://www.sunnyskyz.com/uploads/2018/12/65zli-cat-meme-1a.jpg", "https://i.imgur.com/ypQXU8y.jpg", "https://media1.tenor.com/images/1bb97c0f5564adf2f40f966bd8851f2e/tenor.gif"];
   let url = Math.floor(Math.random() * placeholders.length);
   let card = document.getElementsByClassName("cardmodal-wrapper")[0];
@@ -266,7 +267,7 @@ const openCard = () => {  //  mocktesting
   card.style.display = "block";
 }
 
-const closeCard = () => {  //  mocktesting
+const closeCard = () => { //  mocktesting
   let card = document.getElementsByClassName("cardmodal-wrapper")[0];
   card.style.display = "none";
 }
@@ -277,8 +278,7 @@ const isLoading = (_loading) => {
   if (_loading) {
     logo.style.display = "none";
     loader.style.display = "block";
-  }
-  else {
+  } else {
     logo.style.display = "block";
     loader.style.display = "none";
   }
